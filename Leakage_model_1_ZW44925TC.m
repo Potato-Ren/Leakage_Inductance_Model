@@ -46,8 +46,7 @@ for i = 1:1:length_core
     %uf the relative permebility of ferrte
     uf = 10000;
     e0 = 8.85e-12; %F/m
-    flux_r = 1 / (1 + (lfc1 / df)^1.4 / (5 * uf));
-    Canf = 0.5 * pi * e0 * (lf - lc) * 1e-3 / (log(2 * (lf + df) / df) - 1);
+
     ufe = (uf - 1) * (df / dc)^2 + 1;
     Kn = 1 / (1 + 0.45 * (dc / lc) - 0.005 * (dc / lc)^2);
     A = (dc / 2)^2 * pi;
