@@ -55,10 +55,10 @@ for i = 1:1:length_core
 
     %%%%%%%%%%%%%%%%Calculate the leakage inductance%%%%%%%%%%%%%%%%%%%%%%
     %k=Rout_air/Rout_f
-    k = ((pi - theta) * ht * 1e-3 / (1 + cos((pi - theta) / 2)) + 0.8 * df * 1e-3) / (1.75 * df * 1e-3);
+    k =  (1.75 * df * 1e-3)/((pi - theta) * ht * 1e-3 / (1 + cos((pi - theta) / 2)) + 0.8 * df * 1e-3) ;
 
-    Lf = (1 + x) / (1 / k + x / ufe) * Lair;
-    r = (1 + x) / (1 / k + x / ufe);
+    Lf = (1 + x) / ( k + x / ufe) * Lair;
+    r = (1 + x) / ( k + x / ufe);
     % end
     Llk2(i) = Lf;
 end
